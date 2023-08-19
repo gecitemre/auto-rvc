@@ -3,3 +3,4 @@ This project's aim is automating the [RVC](https://github.com/RVC-Project/Retrie
 
 ## Requirements
 - Python 3.8
+- A Linux machine (tested on Ubuntu 20.04). Mac support ahead.
