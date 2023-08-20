@@ -3,3 +3,6 @@ Retrieval-based-Voice-Conversion-WebUI/
 
 # autoenv file
 .env
+
+# Data
+data/
