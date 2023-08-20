@@ -43,3 +43,7 @@ async function separate() {
     ]);
     return response;
 }
+
+async function convert() {
+    // TODO: convert should use separate and convert together
+}
