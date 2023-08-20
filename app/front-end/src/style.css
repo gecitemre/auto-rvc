@@ -1,0 +1,18 @@
+/* Add your custom styles here */
+.container {
+    display: flex;
+}
+
+.left-section,
+.right-section {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.drop-area {
+    border: 2px dashed #aaa;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+}

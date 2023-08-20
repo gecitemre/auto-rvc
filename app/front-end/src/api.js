@@ -1,17 +1,3 @@
-import fs from 'fs/promises'; // Import the promises version of the fs module
-
-// TODO: parameterize all functions
-
-async function loadConfig() {
-    try {
-        const configData = await fs.readFile('config.json', 'utf-8');
-        const config = JSON.parse(configData);
-        return config;
-    } catch (error) {
-        console.error('Error loading config:', error);
-        return null;
-    }
-}
 
 async function post(endpoint, data) {
     const response = await fetch(`http://${config.IP}:${config.PORT}/run/${endpoint}`, {
@@ -34,7 +20,7 @@ async function convert() {
         0,
         { "name": "zip.zip", "data": "data:@file/octet-stream;base64,UEsFBgAAAAAAAAAAAAAAAAAAAAAAAA==" },
         "pm",
-        "hello world",
+        "0",
         "",
         0.75,
         3,
@@ -46,10 +32,10 @@ async function convert() {
     return response;
 }
 
-async function seperate() {
+async function separate() {
     const response = await post('uvr_convert', [
         "HP2-人声vocals+非人声instrumentals",
-        "./data/raw",
+        "/home/ubuntu/auto-rvc/data/raw/",
         "opt",
         { "name": "zip.zip", "data": "data:@file/octet-stream;base64,UEsFBgAAAAAAAAAAAAAAAAAAAAAAAA==" },
         "opt",
@@ -58,5 +44,3 @@ async function seperate() {
     ]);
     return response;
 }
-
-config = await loadConfig();
