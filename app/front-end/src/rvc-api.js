@@ -1,4 +1,3 @@
-
 async function post(endpoint, data) {
     const response = await fetch(`http://${config.IP}:${config.RVC_PORT}/run/${endpoint}`, {
         method: 'POST',

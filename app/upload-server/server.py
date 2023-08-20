@@ -4,23 +4,15 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-@app.route('/upload-weights', methods=['POST'])
-def upload_weights():
+@app.route('/upload-file', methods=['POST'])
+def upload_file():
     file = request.files['file']
+    # directory = request.form.get('directory') TODO
+    directory = './data'
     if file:
         filename = file.filename
-        file.save(os.path.join('./data/weights', filename))
-        return jsonify({'message': 'Weights uploaded successfully'})
-    else:
-        return jsonify({'error': 'No file was uploaded'})
-
-@app.route('/upload-audio', methods=['POST'])
-def upload_audio():
-    file = request.files['file']
-    if file:
-        filename = file.filename
-        file.save(os.path.join('./data/audio', filename))
-        return jsonify({'message': 'Audio uploaded successfully'})
+        file.save(os.path.join(directory, filename))
+        return jsonify({'message': 'File uploaded successfully'})
     else:
         return jsonify({'error': 'No file was uploaded'})
 
