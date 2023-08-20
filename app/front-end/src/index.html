@@ -14,15 +14,15 @@
     <div class="container">
         <div class="left-section">
             <h2>Upload Weights</h2>
-            <input type="file" accept=".pth" onchange="uploadWeights(this.files)">
+            <input type="file" accept=".pth" onchange="uploadFile(this.files, 'weights')">
         </div>
         <div class="right-section">
             <h2>Upload Audio</h2>
-            <input type="file" accept="audio/*" onchange="uploadAudio(this.files)">
+            <input type="file" accept="audio/*" onchange="uploadFile(this.files, 'audio')">
         </div>
     </div>
     <div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
-        <button class="convert-button">Convert</button>
+        <button class="convert-button" onclick="convert()">Convert</button>
     </div>
 </body>
 
