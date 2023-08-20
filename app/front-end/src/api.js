@@ -27,31 +27,6 @@ async function post(endpoint, data) {
     return jsonResponse;
 }
 
-async function trainStartAll() {
-    const response = await post('train_start_all', [
-        'mi-test',
-        '40k',
-        'true',
-        'E:\\语音音频+标注\\米津玄师\\src',
-        0,
-        3,
-        'pm',
-        5,
-        20,
-        1,
-        'Yes',
-        'pretrained_v2/f0G40k.pth',
-        'pretrained_v2/f0D40k.pth',
-        'hello world',
-        'Yes',
-        'Yes',
-        'v1',
-        '-',
-    ]);
-
-    return response;
-}
-
 async function convert() {
     const response = await post('infer_convert', [
         0,
@@ -74,7 +49,7 @@ async function convert() {
 async function seperate() {
     const response = await post('uvr_convert', [
         "HP2-人声vocals+非人声instrumentals",
-        "E:\codes\py39\test-20230416b\todo-songs\todo-songs",
+        "./data/raw",
         "opt",
         { "name": "zip.zip", "data": "data:@file/octet-stream;base64,UEsFBgAAAAAAAAAAAAAAAAAAAAAAAA==" },
         "opt",
