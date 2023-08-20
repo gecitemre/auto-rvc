@@ -3,13 +3,24 @@ import requests
 import config
 
 
+def post(endpoint, data):
+    # POST /run/{endpoint}
+    response = requests.post(
+        f"http://{config.IP}:{config.PORT}/run/{endpoint}",
+        json={"data": data},
+        timeout=10,
+    ).json()
+
+    return response
+
+
 def train_start_all():
     # POST /run/train_start_all
 
     # TODO: parametrize necessary data
-    response = requests.post(
-        f"http://{config.IP}:{config.PORT}/run/train_start_all",
-        json={
+    response = post(
+        "train_start_all",
+        {
             "data": [
                 "mi-test",
                 "40k",
@@ -31,7 +42,6 @@ def train_start_all():
                 "-",
             ]
         },
-        timeout=10,
-    ).json()
+    )
 
     return response
