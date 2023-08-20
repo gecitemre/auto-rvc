@@ -1,6 +1,6 @@
 
 async function post(endpoint, data) {
-    const response = await fetch(`http://${config.IP}:${config.PORT}/run/${endpoint}`, {
+    const response = await fetch(`http://${config.IP}:${config.RVC_PORT}/run/${endpoint}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

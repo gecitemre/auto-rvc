@@ -4,7 +4,8 @@
 <head>
     <title>My App</title>
     <script src="config.js"></script>
-    <script src="api.js"></script>
+    <script src="rvc-api.js"></script>
+    <script src="upload-api.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,11 +14,11 @@
     <div class="container">
         <div class="left-section">
             <h2>Upload Weights</h2>
-            <input type="file" id="upload-weights" accept=".pth" onchange="uploadWeights(this.files)">
+            <input type="file" accept=".pth" onchange="uploadWeights(this.files)">
         </div>
         <div class="right-section">
             <h2>Upload Audio</h2>
-            <input type="file" id="upload-audio" accept="audio/*" onchange="uploadAudio(this.files)">
+            <input type="file" accept="audio/*" onchange="uploadAudio(this.files)">
         </div>
     </div>
     <div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
